@@ -5,13 +5,6 @@ Extension pack for Cocos2d-x (starting from v3.3 final), made by KNTG Polygon - 
 
 This pack is created to make some time consuming tasks or hard-to-find classes/algorithms easily avalible in this repository. Also all of the extensions avalible here will be tested and confirmed working with specific versions of Cocos2d-x.
 
-How to?
-=======
-
-Just clone this repo to any Cocos2d-x v3.3 final project and start using.
-
-All extensions are included in ```extpack.h``` file and they use ```extpack``` namespace. There is a macro ```USING_NS_EP``` that may be used in ```.cpp``` files - that is simply putting ```using namespace extpack``` to your code.
-
 List of extensions
 ==================
 
@@ -26,6 +19,13 @@ List of extensions
 1. QuickMenu scenes templates - **COMMING SOON**
 1. Slider UI item - **COMMING SOON**
 1. XBox Gamepad Supprot - **COMMING SOON**
+
+How to?
+=======
+
+Just clone this repo to any Cocos2d-x v3.3 final project and start using.
+
+All extensions are included in ```extpack.h``` file and they use ```extpack``` namespace. There is a macro ```USING_NS_EP``` that may be used in ```.cpp``` files - that is simply putting ```using namespace extpack``` to your code.
 
 Contribution guide
 ==================
