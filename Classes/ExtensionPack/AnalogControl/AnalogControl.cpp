@@ -1,9 +1,32 @@
 #include "AnalogControl.h"
-#include "../ExtensionPackConfig.h"
 
 #include <cmath>
+#include "extpack.h"
 
 USING_NS_CC;
+
+namespace extpack {
+
+AnalogControl::BoundingRect::BoundingRect(const cocos2d::Vec2& lowerLeftCorner, const cocos2d::Vec2& upperRightCorner)
+{
+    lowerLeft = lowerLeftCorner;
+    upperRight = upperRightCorner;
+}
+
+bool AnalogControl::BoundingRect::isSet()
+{
+    return (upperRight - lowerLeft).length() > FLT_EPSILON;
+}
+
+bool AnalogControl::BoundingRect::contains(const cocos2d::Vec2& point)
+{
+    // condition A: lowerLeft <= point
+    auto condA = lowerLeft.x <= point.x && lowerLeft.y <= point.y;
+    // condition B: point <= upperRight
+    auto condB = point.x <= upperRight.x && point.y <= upperRight.y;
+
+    return condA && condB;
+}
 
 AnalogControl* AnalogControl::createLayer()
 {
@@ -11,10 +34,10 @@ AnalogControl* AnalogControl::createLayer()
 
     analogControl->create();
 
-    analogControl->setColor(cocos2d::Color3B(0, 0, 0));
+    analogControl->setColor(cocos2d::Color3B::BLACK);
 
     analogControl->setContentSize(cocos2d::Size::Size(1, 1));
-    analogControl->setAnchorPoint(cocos2d::Vec2(0, 0));
+    analogControl->setAnchorPoint(cocos2d::Vec2::ZERO);
 
     analogControl->addEvents();
 
@@ -42,7 +65,7 @@ bool AnalogControl::init()
 
 void AnalogControl::addEvents()
 {
-    touchListener = EventListenerTouchOneByOne::create();
+    auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
 
     touchListener->onTouchBegan = [&](Touch* touch, Event* event)
@@ -65,9 +88,9 @@ void AnalogControl::addEvents()
                     handle->setPosition(touchLocation);
 
                     if (base->convertTouchToNodeSpaceAR(touch).length() / range <= 0.5f) {
-                        value = Vec2(0, 0);
+                        value = Vec2::ZERO;
                         handle->setPosition(value * range);
-                        touchLocation = Vec2(0, 0);
+                        touchLocation = Vec2::ZERO;
                     }
 
                 }
@@ -107,9 +130,9 @@ void AnalogControl::addEvents()
             handle->setPosition(touchLocation);
 
             if (base->convertTouchToNodeSpaceAR(touch).length() / range <= 0.5f) {
-                value = Vec2(0, 0);
+                value = Vec2::ZERO;
                 handle->setPosition(value * range);
-                touchLocation = Vec2(0, 0);
+                touchLocation = Vec2::ZERO;
             }
 
         }
@@ -128,7 +151,7 @@ void AnalogControl::addEvents()
 
     touchListener->onTouchEnded = [this](Touch* touch, Event* event)
     {
-        value = Vec2(0, 0);
+        value = Vec2::ZERO;
         if (onChange)
             onChange(value, 0);
 
@@ -145,16 +168,45 @@ void AnalogControl::addEvents()
 void AnalogControl::update(float dt)
 {
     if (active && onChange) {
-        auto power = 2; // non linear characteristics. set to 1 for linear
-        auto radius = value.length();
-        auto vec = Vec2(sin(value.x) * pow(radius, power), sin(value.y) * pow(radius, power));
+        auto v = easeFunc(value.length());
+        auto vec = value.getNormalized() * v;
         if (normalized || digital) {
             vec.normalize();
             if (digital) {
                 float angle = round(round(vec.getAngle() * 180 / M_PI) / 45) * 45 * M_PI / 180;
-                vec = Vec2(cos(angle), sin(angle)) * range;
+                vec = Vec2(cos(angle), sin(angle));
             }
         }
         onChange(vec, dt);
     }
+}
+
+void AnalogControl::setParent(Node* parent)
+{
+    Layer::setParent(parent);
+
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->setSwallowTouches(true);
+
+    listener->onTouchBegan = [&](Touch* touch, Event* event)
+    {
+        auto touchPosition = _parent->convertTouchToNodeSpace(touch);
+
+        if (showOnlyIfTouched && (!boundingRect.isSet() || boundingRect.contains(touchPosition)))
+        {
+            setPosition(touchPosition);
+            activate();
+        }
+
+        if ((touchPosition - getPosition()).length() <= range)
+            _parent->getEventDispatcher()->dispatchEvent(event);
+
+        CC_UNUSED_PARAM(touch);
+        CC_UNUSED_PARAM(event);
+        return true;
+    };
+
+    _parent->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, _parent);
+}
+
 }

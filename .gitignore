@@ -8,3 +8,4 @@ CMakeLists.txt
 
 # But not theese
 !**/ExtensionPack
+!**/extpack.h
