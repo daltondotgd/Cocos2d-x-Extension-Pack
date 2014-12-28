@@ -13,7 +13,7 @@ All extensions are included in ```extpack.h``` file and they use ```extpack``` n
 List of extensions
 ==================
 
-[AnalogControl](Classes/ExtensionPack/AnalogControl)
+[AnalogControl](Classes/ExtensionPack/AnalogControl) - a compound on-screen analog knobs for your game
 
 Contribution guide
 ==================
@@ -59,4 +59,4 @@ Comments are required in header files - but only to documment non-trivial method
 
 ###Readme
 
-Your extension should contain a ```Readme.md``` file, placed under ```Classes/ExtensionPack/YourExtension/```. The ```Readme.md``` file should explain every use of your extension and provide all necessary information, so everybody can start using your classes after reading the file. This may be a tutorial or any kind of doc, but should contain all information one could desire.
+Your extension should contain a ```Readme.md``` file, placed under ```Classes/ExtensionPack/YourExtension/```. The ```Readme.md``` file should contain a description and explain how to use your extension and provide all necessary information, so everybody can start using your classes after reading the file. This may be a tutorial or any kind of doc, but should contain all information one could desire.
