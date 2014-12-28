@@ -3,6 +3,8 @@ Cocos2d-x-Extension-Pack
 
 Extension pack for Cocos2d-x (starting from v3.3 final), made by KNTG Polygon - a students organization on computer games. Everybody is welcome to contribute.
 
+This pack is created to make some time consuming tasks or hard-to-find classes/algorithms easily avalible in this repository. Also all of the extensions avalible here will be tested and confirmed working with specific versions of Cocos2d-x.
+
 How to?
 =======
 
@@ -13,7 +15,17 @@ All extensions are included in ```extpack.h``` file and they use ```extpack``` n
 List of extensions
 ==================
 
-[AnalogControl](Classes/ExtensionPack/AnalogControl) - a compound on-screen analog knobs for your game
+[AnalogControl](Classes/ExtensionPack/AnalogControl) - compound on-screen analogs for your game
+A\* Path Finding - **COMMING SOON**
+Actor helper class for better scene maintenance - **COMMING SOON**
+AnimatedSprite helper class and animation utils - **COMMING SOON**
+Box2d Debug Draw - **COMMING SOON**
+Configuration Files Support - **COMMING SOON**
+HealthBar UI item - **COMMING SOON**
+Physical scene and sprites for box2d - **COMMING SOON**
+QuickMenu scenes templates - **COMMING SOON**
+Slider UI item - **COMMING SOON**
+XBox Gamepad Supprot - **COMMING SOON**
 
 Contribution guide
 ==================
