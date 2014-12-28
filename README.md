@@ -3,7 +3,9 @@ Cocos2d-x-Extension-Pack
 
 Extension pack for Cocos2d-x (starting from v3.3 final), made by KNTG Polygon - a students organization on computer games. Everybody is welcome to contribute.
 
-This pack is created to make some time consuming tasks or hard-to-find classes/algorithms easily avalible in this repository. Also all of the extensions avalible here will be tested and confirmed working with specific versions of Cocos2d-x.
+This pack is created to make some time consuming tasks or hard-to-find classes/algorithms easily avalible in this repository. This will be a great help on gamejams and compos - it'll help people using Cocos2d-x, race with those using Unity3d and other GameMakers :D
+
+All of the extensions avalible here will be tested and confirmed working with specific versions of Cocos2d-x.
 
 List of extensions
 ==================
