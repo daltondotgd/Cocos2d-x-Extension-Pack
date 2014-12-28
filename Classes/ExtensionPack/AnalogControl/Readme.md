@@ -1,8 +1,7 @@
 AnalogControl
-#############
+=============
 
-An extension that allows you to put onscreen analogs on your scene.
-===================================================================
+###An extension that allows you to put onscreen analogs on your scene.
 
 Example:
 
