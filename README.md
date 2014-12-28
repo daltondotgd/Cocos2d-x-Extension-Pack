@@ -15,17 +15,17 @@ All extensions are included in ```extpack.h``` file and they use ```extpack``` n
 List of extensions
 ==================
 
-[AnalogControl](Classes/ExtensionPack/AnalogControl) - compound on-screen analogs for your game
-A\* Path Finding - **COMMING SOON**
-Actor helper class for better scene maintenance - **COMMING SOON**
-AnimatedSprite helper class and animation utils - **COMMING SOON**
-Box2d Debug Draw - **COMMING SOON**
-Configuration Files Support - **COMMING SOON**
-HealthBar UI item - **COMMING SOON**
-Physical scene and sprites for box2d - **COMMING SOON**
-QuickMenu scenes templates - **COMMING SOON**
-Slider UI item - **COMMING SOON**
-XBox Gamepad Supprot - **COMMING SOON**
+1. [AnalogControl](Classes/ExtensionPack/AnalogControl) - compound on-screen analogs for your game
+1. A\* Path Finding - **COMMING SOON**
+1. Actor helper class for better scene maintenance - **COMMING SOON**
+1. AnimatedSprite helper class and animation utils - **COMMING SOON**
+1. Box2d Debug Draw - **COMMING SOON**
+1. Configuration Files Support - **COMMING SOON**
+1. HealthBar UI item - **COMMING SOON**
+1. Physical scene and sprites for box2d - **COMMING SOON**
+1. QuickMenu scenes templates - **COMMING SOON**
+1. Slider UI item - **COMMING SOON**
+1. XBox Gamepad Supprot - **COMMING SOON**
 
 Contribution guide
 ==================
