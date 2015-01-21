@@ -11,16 +11,17 @@ List of extensions
 ==================
 
 1. [AnalogControl](Classes/ExtensionPack/AnalogControl) - compound on-screen analogs for your game
-1. A\* Path Finding - **COMMING SOON**
-1. Actor helper class for better scene maintenance - **COMMING SOON**
-1. AnimatedSprite helper class and animation utils - **COMMING SOON**
-1. Box2d Debug Draw - **COMMING SOON**
-1. Configuration Files Support - **COMMING SOON**
-1. HealthBar UI item - **COMMING SOON**
-1. Physical scene and sprites for box2d - **COMMING SOON**
-1. QuickMenu scenes templates - **COMMING SOON**
-1. Slider UI item - **COMMING SOON**
-1. XBox Gamepad Supprot - **COMMING SOON**
+1. A\* Path Finding - **IN PLANS**
+1. Actor helper class for better scene maintenance - **IN PLANS**
+1. AnimatedSprite helper class and animation utils - **IN PLANS**
+1. Behaviour Trees for cocos2d-x - **IN DEVELOPMENT**
+1. Box2d Debug Draw - **IN PLANS**
+1. Configuration Files Support - **IN PLANS**
+1. HealthBar UI item - **IN PLANS**
+1. Physical scene and sprites for box2d - **IN PLANS**
+1. QuickMenu scenes templates - **IN PLANS**
+1. Slider UI item - **IN PLANS**
+1. XBox Gamepad Supprot - **IN PLANS**
 
 How to?
 =======
