@@ -14,7 +14,7 @@ List of extensions
 1. A\* Path Finding - **IN PLANS**
 1. Actor helper class for better scene maintenance - **IN PLANS**
 1. AnimatedSprite helper class and animation utils - **IN PLANS**
-1. Behaviour Trees for cocos2d-x - **IN DEVELOPMENT**
+1. Behavior Trees for cocos2d-x - **IN DEVELOPMENT**
 1. Box2d Debug Draw - **IN PLANS**
 1. Configuration Files Support - **IN PLANS**
 1. HealthBar UI item - **IN PLANS**
